@@ -1,9 +1,9 @@
 version: '3'
 
 services:
-  django-project:
+  shop:
     build: .
-    container_name: Offer
+    container_name: Internet_Shop
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/project
