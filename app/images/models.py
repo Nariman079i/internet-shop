@@ -1,4 +1,5 @@
 from django.db import models
+from images.admin import admin
 
 
 # Create your models here.
@@ -9,3 +10,6 @@ class Image(models.Model):
 
     def __str__(self):
         return self.image.name
+
+
+admin.site.register(Image)
