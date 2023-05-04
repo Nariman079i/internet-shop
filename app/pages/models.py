@@ -19,7 +19,7 @@ class Banner(models.Model):
 class Page(models.Model):
     title = models.CharField("Наименование", max_length=255, null=True, blank=True)
     category = models.ManyToManyField(Category,blank=True)
-    banner = models.ForeignKey(Banner,on_delete=models.SET_NULL,null=True)
+    banner = models.ManyToManyField(Banner,blank=True)
     items = models.ManyToManyField(Item,blank=True)
 
     class Meta:
