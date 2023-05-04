@@ -12,7 +12,7 @@ class BannerSerializer(ModelSerializer):
 
 class PageSerializer(ModelSerializer):
     category = CategorySerializer(many=True)
-    banner = BannerSerializer(many=False)
+    banner = BannerSerializer(many=True)
     items = ItemSerializer(many=True)
 
     class Meta:
