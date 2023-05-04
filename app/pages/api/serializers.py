@@ -4,7 +4,6 @@ from pages.models import Banner,Page
 
 
 class BannerSerializer(ModelSerializer):
-
     class Meta:
         model = Banner
         fields = "__all__"
