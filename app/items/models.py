@@ -12,6 +12,7 @@ class Category(models.Model):
         verbose_name = "Категории"
         verbose_name_plural = "Категория"
 
+
     def __str__(self):
         return f"{self.pk} {self.title}"
 
@@ -28,6 +29,7 @@ class Item(models.Model):
     class Meta:
         verbose_name = "Товары"
         verbose_name_plural = "Товар"
+
 
     def __str__(self):
         return f"{self.pk} {self.title}"

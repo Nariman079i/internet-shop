@@ -2,6 +2,13 @@ from rest_framework.generics import *
 from items.api.seriazlisers import *
 
 
+class CategoryItemsListAPI(ListAPIView):
+    serializer_class = ItemSerializer
+    def get_queryset(self):
+        return Item.objects.filter(category__slug='slugs')
+
+
+
 class CategoryDetailAPI(RetrieveAPIView):
     serializer_class = CategorySerializer
     queryset = Category.objects.all()
@@ -22,4 +29,3 @@ class ItemDetailAPI(RetrieveAPIView):
     serializer_class = ItemSerializer
     queryset = Item.objects.all()
     lookup_field = 'id'
-
