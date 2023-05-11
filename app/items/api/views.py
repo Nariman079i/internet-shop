@@ -4,8 +4,11 @@ from items.api.seriazlisers import *
 
 class CategoryItemsListAPI(ListAPIView):
     serializer_class = ItemSerializer
+
     def get_queryset(self):
-        return Item.objects.filter(category__slug='slugs')
+        slug = self.kwargs.get('slug')
+        return Item.objects.filter(category__slug=slug)
+
 
 
 

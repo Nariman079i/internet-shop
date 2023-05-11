@@ -20,7 +20,7 @@ class Category(models.Model):
 class Item(models.Model):
     title = models.CharField("Наименование", max_length=255, null=True, blank=True)
     description = models.TextField("Описание", null=True, blank=True)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True, blank=True)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True, blank=True, related_name="item_category")
     img = models.ImageField("Изображение", null=True, blank=True, upload_to="items/img/")
     price = models.IntegerField("Стоимость", null=True, blank=True)
     image_list = models.ManyToManyField(Image, blank=True)
