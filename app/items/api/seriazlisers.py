@@ -12,7 +12,7 @@ class ImageSerializer(ModelSerializer):
 class CategorySerializer(HyperlinkedModelSerializer):
     class Meta:
         model = Category
-        fields = ('id', 'title', 'img', 'url')
+        fields = ('id', 'title', 'img', 'url', 'slug')
         extra_kwargs = {
             'url': {'lookup_field': 'slug'}
         }
